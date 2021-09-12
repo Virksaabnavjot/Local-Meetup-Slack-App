@@ -8,11 +8,11 @@ server.listen(3000, () => {
 
 server.post('/webhook', express.json({type: 'application/json'}), (request, response) => {
   const event = request.body; 
-  //console.log(event);
-  
+  console.log(event);
+
   response.send();
-  
-  axios.post('slack webhook here', {
+
+  axios.post('https://hooks.slack.com/services/'+process.env.HOOK, {
   "blocks":[
      {
         "type":"section",
@@ -54,7 +54,5 @@ server.post('/webhook', express.json({type: 'application/json'}), (request, resp
 .catch(function (error) {
   //console.log(error);
 });
-  
+
 });
-
-
