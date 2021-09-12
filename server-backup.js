@@ -12,7 +12,7 @@ server.post('/webhook', express.json({type: 'application/json'}), (request, resp
   
   response.send();
   
-  axios.post('https://hooks.slack.com/services/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', {
+  axios.post('slack webhook here', {
   "blocks":[
      {
         "type":"section",
